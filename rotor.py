@@ -27,10 +27,10 @@ class Rotor:
 
     def rotate(self):
         self.rotational_orientation += 1
-        self.rotational_orientation %= 26
+        self.rotational_orientation %= self.num_inputs
 
     def map(self, input):
-        return self.mapping[(input + self.rotational_orientation) % 26]
+        return self.mapping[(input + self.rotational_orientation) % self.num_inputs]
 
     def __str__(self):
         return f'rotational_orientation: {self.rotational_orientation}\nmapping: {self.mapping}'
